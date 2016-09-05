@@ -1,12 +1,16 @@
 package edu.gatech.oad.antlab.person;
 
+import java.util.Random;
+import java.util.ArrayList;
+
 /**
  *  A simple class for person 2
  *  returns their name and a
- *  modified string 
+ *  modified string
  *
  * @author Bob
- * @version 1.1
+ * @author Jack Weinkselbaum
+ * @version 1.2
  */
 public class Person2 {
     /** Holds the persons real name */
@@ -29,19 +33,39 @@ public class Person2 {
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
-	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+	private static String calc(String input) {
+      int tot = input.length();
+      ArrayList<String> chars = new ArrayList<String>();
+      for (int i = 0; i < tot; i++) {
+          chars.add(input.substring(i, i + 1));
+      }
+
+      Random rng = new Random();
+      String randReturn = "";
+      while (chars.size() > 0) {
+          int rand = rng.nextInt(chars.size());
+          String addOn = chars.get(rand);
+          randReturn += addOn;
+          System.out.println(chars.size());
+          chars.remove(rand);
+      }
+	  return randReturn;
 	}
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
 	 *
 	 * @param input the varying string
-	 * @return the string representing the 
+	 * @return the string representing the
 	 *         object
 	 */
 	public String toString(String input) {
 	  return name + calc(input);
 	}
+
+    public static void main(String[] args) {
+        String hello = calc("Hello");
+        System.out.println("Hello World");
+        System.out.println(hello);
+    }
 }
