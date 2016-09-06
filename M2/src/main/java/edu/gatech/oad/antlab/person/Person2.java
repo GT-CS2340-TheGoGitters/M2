@@ -63,9 +63,4 @@ public class Person2 {
 	  return name + calc(input);
 	}
 
-    public static void main(String[] args) {
-        String hello = calc("Hello");
-        System.out.println("Hello World");
-        System.out.println(hello);
-    }
 }
