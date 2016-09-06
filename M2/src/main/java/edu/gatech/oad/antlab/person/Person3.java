@@ -9,9 +9,9 @@ package edu.gatech.oad.antlab.person;
  *  @version 1.1
  */
 public class Person3 {
-   /** Holds the persons real name */  
-	private String name = "Joshua Dwire";
-	
+   /** Holds the persons real name */
+	private String name;
+
 	/**
 	 * The constructor, takes in the persons
 	 * name
@@ -20,7 +20,7 @@ public class Person3 {
 	public Person3(String pname){
 	  name = pname;
 	}
-	
+
 	/**
 	 * Return a string rep of this object
 	 * that varies with an input string
