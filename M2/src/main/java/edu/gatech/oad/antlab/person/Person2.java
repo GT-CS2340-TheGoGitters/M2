@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Bob
  * @author Jack Weinkselbaum
- * @version 1.2
+ * @version 1.2.2
  */
 public class Person2 {
     /** Holds the persons real name */
@@ -33,7 +33,7 @@ public class Person2 {
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
-	private static String calc(String input) {
+	private String calc(String input) {
       int tot = input.length();
       ArrayList<String> chars = new ArrayList<String>();
       for (int i = 0; i < tot; i++) {
@@ -46,7 +46,6 @@ public class Person2 {
           int rand = rng.nextInt(chars.size());
           String addOn = chars.get(rand);
           randReturn += addOn;
-          System.out.println(chars.size());
           chars.remove(rand);
       }
 	  return randReturn;
@@ -62,5 +61,4 @@ public class Person2 {
 	public String toString(String input) {
 	  return name + calc(input);
 	}
-
 }
