@@ -1,0 +1,25 @@
+// set a default task, so if there is no given task, these will be executed
+defaultTasks  'jar'
+
+// import java related tasks like compileJava, compileJavaTest, clean, javadoc, jar
+apply plugin: 'java'
+
+// set up some variables (properties)
+sourceCompatibility = 1.8
+version = '1.0'
+
+// define the contents of the jar file
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version , 'Main-Class' : 'edu.gatech.oad.antlab.pkg1.AntLabMain', 'Class-Path': '../../lib/resources.jar'
+    }
+}
+
+dependencies {
+    compile files('lib/resources.jar')
+}
+
+// set up a location of repositories so that any needed library dependencies can be downloaded
+repositories {
+    mavenCentral()
+}
