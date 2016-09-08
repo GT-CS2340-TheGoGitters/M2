@@ -4,8 +4,9 @@ package edu.gatech.oad.antlab.person;
  *  A simple class for person 4
  *  returns their name and a
  *  modified string 
- *  
+ *
  *  @author Bob
+ *  @author Marisa Hoenig
  *  @version 1.1
  */
 public class Person4 {
@@ -30,8 +31,20 @@ public class Person4 {
      * @return the modified string
      */
     private String calc(String input) {
-      //Person 4 put your implementation here
-      return null;
+      String output = "";
+      for (int i = 0; i < input.length(); i++) {
+        int current = (int) input.charAt(i);
+        if (current == 90) {
+          current = 64;
+        } else if (current == 122) {
+          current = 96;
+        } else if (current == 57) {
+          current = 47;
+        }
+        current++;
+        output += (char) current;
+      }
+      return output;
     }
     
     /**
@@ -45,6 +58,5 @@ public class Person4 {
     public String toString(String input) {
       return name + calc(input);
     }
-
 }
 
